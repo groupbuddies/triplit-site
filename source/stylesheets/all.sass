@@ -1,6 +1,12 @@
+@import compass/css3
 @charset "utf-8"
 
-$default-spacing: 1rem
+$default-spacing: 18px
+$big-spacing: $default-spacing * 4
+$logo-size: 116px
+$screenshot-width: 1286px
+
+@import images
 
 .small
   font-size: 0.9rem
@@ -11,7 +17,16 @@ $default-spacing: 1rem
     font-size: 1rem
 
 html, body
+  color: white
+  min-height: 100%
   font-family: sans-serif
+
+*, *:before, *:after
+  +box-sizing(border-box)
+
+ul
+  padding: 0
+  margin: 0
 
 .background-image
   position: fixed
@@ -24,41 +39,87 @@ html, body
   background-repeat: no-repeat
   z-index: -1
 
-.main
-  +clearWhiteSpace
-
 .content
   margin: 0 auto
-  padding: $default-spacing
+  padding: $default-spacing 
   max-width: 860px
   background: white
 
-.logo
-  width: 100%
-  height: 100%
-  background: url("../images/logo.png")
-  background-repeat: no-repeat
-  background-size: contain
-  background-position: top center
+.main
+  +clearWhiteSpace
+  > *
+    display: inline-block
+    position: absolute
+    top: 0
+    width: 50%
+    height: 100%
+    &:nth-child(1)
+      left: 0
+    &:nth-child(2)
+      right: 0
 
 .main-description
-  display: inline-block
-  width: 50%
-  height: 700px
+  +clearWhiteSpace
+  padding-left: $big-spacing
+  padding-top: $big-spacing
+  vertical-align: top
+  .logo, .logo-name
+    display: inline-block
+    vertical-align: top
+  .logo-name
+    margin-bottom: $default-spacing
+  .logo-full
+    display: none
+  .badge
+    margin: 0 $default-spacing / 4
+  .badges
+    text-align: center
+
+@media screen and (min-width: 570px)
+  .main-description
+    .badges
+      text-align: left
+    .badge:first-child
+      margin-left: $logo-size + $default-spacing
 
 .main-screenshot
-  display: inline-block
-  width: 50%
-  height: 700px
+  padding-top: $big-spacing
+  vertical-align: top
   .screenshot
     height: 100%
     background: url("../images/hand.png")
     background-repeat: no-repeat
     background-size: contain
-    background-position: bottom right
+    background-position: center right
 
 .main-footer
+  position: fixed
+  bottom: 0
   padding: $default-spacing 0 $default-spacing / 2 0
+  width: 100%
   text-align: center
   a
     color: white
+  li
+    margin: 0 $default-spacing / 2
+    display: inline
+    list-style-type: none
+
+@media screen and (max-width: 570px)
+  .main-description
+    .logo-full
+      display: block
+      margin-bottom: $default-spacing / 4
+    .logo-name, .logo
+      display: none
+
+@media screen and (max-width: 1000px)
+  .main > *
+    position: relative
+    margin-bottom: $default-spacing
+    width: 100%
+    height: auto
+  .main-description
+    padding-right: $big-spacing
+  .main-screenshot
+    height: 400px

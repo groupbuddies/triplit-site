@@ -10,13 +10,16 @@
     <title><%= current_page.data.title || "The Middleman" %></title>
 
     <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
   </head>
   <body class="<%= page_classes %>">
     <div class="background-image"></div>
     <%= yield %>
   </body>
   <footer class="main-footer">
-    <a class="small" href="privacy-policy.html">Privacy Policy</a>
+    <ul>
+      <li>Crafted by <a href="http://groupbuddies.com" target="_blank">Group Buddies</a></li>
+      <li><a class="small" href="privacy-policy.html">Privacy Policy</a></li>
+    </ul>
   </footer>
+  <%= javascript_include_tag  "all" %>
 </html>
