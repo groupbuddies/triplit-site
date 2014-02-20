@@ -66,20 +66,25 @@ ul
   .logo, .logo-name
     display: inline-block
     vertical-align: top
+  .logo-slogan
+    margin-bottom: $default-spacing / 2
+    font-size: 1.3rem
   .logo-name
-    margin-bottom: $default-spacing
+    margin-bottom: $default-spacing / 4
   .logo-full
     display: none
   .badge
     margin: 0 $default-spacing / 4
-  .badges
+    img
+      height: 40px
+  .badges, .logo-slogan
     text-align: center
 
 @media screen and (min-width: 570px)
   .main-description
-    .badges
+    .badges, .logo-slogan
       text-align: left
-    .badge:first-child
+    .badge:first-child, .logo-slogan
       margin-left: $logo-size + $default-spacing
 
 .main-screenshot
