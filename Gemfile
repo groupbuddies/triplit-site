@@ -3,6 +3,7 @@
 source 'http://rubygems.org'
 
 gem "middleman", "~>3.2.2"
+gem 'rake', '~> 10.1'
 
 gem "middleman-minify-html"
 
