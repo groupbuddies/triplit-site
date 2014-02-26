@@ -46,7 +46,8 @@ ul
   z-index: -1
 
 .share-container
-  max-width: 250px
+  max-width: 300px
+  padding-bottom: $default-spacing
 
 .content
   @extend %defaultContainer
@@ -67,8 +68,7 @@ ul
 
 .main-description
   +clearWhiteSpace
-  padding-left: $big-spacing
-  padding-top: $big-spacing
+  padding: $big-spacing
   vertical-align: top
   .logo, .logo-name
     display: inline-block
@@ -97,23 +97,6 @@ ul
   .logo-slogan
     text-align: center
 
-@media screen and (max-width: 570px)
-  html, body
-    font-size: 14px
-  .main-description
-    padding: $dynamic-spacing * 1.5
-    padding-bottom: 0
-
-@media screen and (min-width: 570px)
-  .main-description
-    .badges, .logo-slogan
-      text-align: left
-    .badge:first-child, .logo-slogan, .cta, .share-container
-      margin-left: $logo-size + $default-spacing
-  .main-footer
-    position: fixed
-    bottom: 0
-
 .main-screenshot
   padding-top: $big-spacing
   vertical-align: top
@@ -137,7 +120,10 @@ ul
     list-style-type: none
 
 @media screen and (max-width: 570px)
+  html, body
+    font-size: 14px
   .main-description
+    padding: $dynamic-spacing * 1.5
     .logo-full
       display: block
       margin-bottom: $default-spacing / 4
@@ -148,6 +134,14 @@ ul
     .share-container
       margin: 0 auto
 
+@media screen and (min-width: 570px)
+  .main-description
+    .badges, .logo-slogan
+      text-align: left
+    .badge:first-child, .logo-slogan, .cta, .share-container
+      margin-left: $logo-size + $default-spacing
+
+
 @media screen and (max-width: 1000px)
   .main > *
     position: relative
@@ -157,3 +151,7 @@ ul
   .main-screenshot
     height: 400px
 
+@media screen and (min-width: 1000px)
+  .main-footer
+    position: fixed
+    bottom: 0
