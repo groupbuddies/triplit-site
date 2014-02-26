@@ -24,7 +24,8 @@ $screenshot-width: 1286px
 html, body
   min-height: 100%
   font-size: 18px
-  font-family: sans-serif
+  font-family: 'PT Serif', serif
+  -webkit-font-smoothing: antialiased
 
 *, *:before, *:after
   +box-sizing(border-box)
@@ -73,13 +74,16 @@ ul
     display: inline-block
     vertical-align: top
   .logo-slogan
-    margin-top: $default-spacing / 2
+    margin-top: $default-spacing / 3
     font-size: 1.3rem
+    font-family: 'Open Sans', sans-serif
+    font-weight: lighter
+    font-style: italic
     color: white
   .cta
     margin-top: $default-spacing * 4
     margin-bottom: $default-spacing
-    font-size: 1.3rem
+    font-size: 2rem
     color: white
   .logo-name
     //margin-bottom: $default-spacing / 4
@@ -106,6 +110,9 @@ ul
       text-align: left
     .badge:first-child, .logo-slogan, .cta, .share-container
       margin-left: $logo-size + $default-spacing
+  .main-footer
+    position: fixed
+    bottom: 0
 
 .main-screenshot
   padding-top: $big-spacing
@@ -118,11 +125,8 @@ ul
     background-position: center right
 
 .main-footer
-  position: fixed
-  bottom: 0
   padding: $default-spacing 0 $default-spacing / 2 0
   width: 100%
-  color: white
   color: white
   text-align: center
   a
@@ -139,6 +143,10 @@ ul
       margin-bottom: $default-spacing / 4
     .logo-name, .logo
       display: none
+    .cta, .badges
+      text-align: center
+    .share-container
+      margin: 0 auto
 
 @media screen and (max-width: 1000px)
   .main > *
@@ -148,3 +156,4 @@ ul
     height: auto
   .main-screenshot
     height: 400px
+
