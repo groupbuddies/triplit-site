@@ -1,0 +1,3 @@
+[submodule "source/vendor/rrssb"]
+	path = source/vendor/rrssb
+	url = https://github.com/kni-labs/rrssb.git

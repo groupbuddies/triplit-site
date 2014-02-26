@@ -2,9 +2,14 @@
 @charset "utf-8"
 
 $default-spacing: 18px
-$big-spacing: $default-spacing * 4
-$logo-size: 116px
+$dynamic-spacing: 1rem
+$big-spacing: $dynamic-spacing * 3
+$logo-size: 70px
 $screenshot-width: 1286px
+
+%defaultContainer
+  margin: 0 auto
+  max-width: 860px
 
 @import images
 
@@ -18,6 +23,7 @@ $screenshot-width: 1286px
 
 html, body
   min-height: 100%
+  font-size: 18px
   font-family: sans-serif
 
 *, *:before, *:after
@@ -38,10 +44,11 @@ ul
   background-repeat: no-repeat
   z-index: -1
 
+.share-container
+  max-width: 250px
+
 .content
-  margin: 0 auto
-  padding: $default-spacing 
-  max-width: 860px
+  @extend %defaultContainer
   background: white
 
 .main
@@ -66,11 +73,16 @@ ul
     display: inline-block
     vertical-align: top
   .logo-slogan
-    margin-bottom: $default-spacing / 2
+    margin-top: $default-spacing / 2
+    font-size: 1.3rem
+    color: white
+  .cta
+    margin-top: $default-spacing * 4
+    margin-bottom: $default-spacing
     font-size: 1.3rem
     color: white
   .logo-name
-    margin-bottom: $default-spacing / 4
+    //margin-bottom: $default-spacing / 4
   .logo-full
     display: none
   .badge
@@ -78,14 +90,21 @@ ul
     text-decoration: none
     img
       height: 40px
-  .badges, .logo-slogan
+  .logo-slogan
     text-align: center
+
+@media screen and (max-width: 570px)
+  html, body
+    font-size: 14px
+  .main-description
+    padding: $dynamic-spacing * 1.5
+    padding-bottom: 0
 
 @media screen and (min-width: 570px)
   .main-description
     .badges, .logo-slogan
       text-align: left
-    .badge:first-child, .logo-slogan
+    .badge:first-child, .logo-slogan, .cta, .share-container
       margin-left: $logo-size + $default-spacing
 
 .main-screenshot
@@ -127,7 +146,5 @@ ul
     margin-bottom: $default-spacing
     width: 100%
     height: auto
-  .main-description
-    padding-right: $big-spacing
   .main-screenshot
     height: 400px
