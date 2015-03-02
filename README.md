@@ -1,4 +1,4 @@
-This repository contains the landing page for [tripl.it](www.trip.it).
+This repository contains the landing page for [tripl.it](triplit.groupbuddies.com).
 
 Trip.it is a mobile application to manage share trip expenses without hassle.
 
